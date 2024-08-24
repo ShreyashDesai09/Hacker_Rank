@@ -13,6 +13,7 @@ func main() {
 	var anum int64
 	var i int64
 	arr2 := []int64{}
+
 	// var z int64
 
 	scanner := bufio.NewScanner(os.Stdin)
@@ -21,7 +22,7 @@ func main() {
 	anum, _ = strconv.ParseInt(scanner.Text(), 10, 64)
 
 	if anum > 0 {
-		for i = 1; i <= anum; i++ {
+		for i = 0; i < anum; i++ {
 			fmt.Printf("Array no %d = ", i)
 			scanner.Scan()
 			num, err := strconv.ParseInt(scanner.Text(), 10, 64)
@@ -32,19 +33,18 @@ func main() {
 			}
 		}
 	}
+
 	// arr = strconv.FormatInt(arr, 10, 64)
 	fmt.Println("ARRAY LENGTH :", anum)
 	fmt.Println("ARRAY : ", arr)
-	var z int64
-	// z = int64(len(arr))
-	var t int64
-	z = anum
 
-	for i = z; i > 0; i-- {
-		t = arr[i]
-		arr2 = append(arr2,t)
+	// var j int64
+	z := anum
+
+	for i := z; i > 0; i-- {
+		arr2 = append(arr2, arr[i])
 	}
 
-	fmt.Println("REV ARRAY : ", arr2)
+	fmt.Println(arr2)
 
 }
